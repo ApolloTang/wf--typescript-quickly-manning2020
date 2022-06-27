@@ -5,14 +5,14 @@ In this pattern, AppState store date representing the current state of a applica
 ```typescript
 
 class AppState {
-  private constructor() {}
+  private constructor() {}  //<--- once a contractor is marked private, it can no longer be instantiated.
 
   public counter = 0;  // the app state
 
-  private static _instanceRef: AppState
+  private static _instanceRef: AppState  // <--- this static variable will hold the single instance of AppState Class
   public static getInstance(): AppState {
     if (AppState._instanceRef === undefined) {
-      AppState._instanceRef = new AppState()
+      AppState._instanceRef = new AppState()  // <--- This is a factory
     }
     return AppState._instanceRef
   }
