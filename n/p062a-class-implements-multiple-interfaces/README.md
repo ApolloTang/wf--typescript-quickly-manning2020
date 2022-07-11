@@ -13,10 +13,12 @@ interface MotorVehicle {
   honk(howLong: number):     void;
 }
 
+
 interface Flyable {
   fly(howHeight: number):    void;
   land():                    void;
 }
+
 
 interface Swimable {
   swim(howFar: number):    void;
@@ -24,14 +26,18 @@ interface Swimable {
 
 
 class Car implements MotorVehicle, Flyable, Swimable {
+  // implimenting MotorVehicle
   startEngine():             boolean { return true; }
   stopEngine():              boolean { return true; }
   brake():                   boolean { return true; }
   accelerate(speed: number): void    { console.log(`Driving faster`); }
   honk(howLong: number):     void    { console.log(`Beep beep yeah!`) };
 
+  // implimenting Flyable
   fly():                     void {console.log('can fly')}
   land():                    void {console.log('can land')}
+
+  // implimenting Swimable
   swim():                    void {console.log('can land')}
 
   public brand:              string
@@ -39,8 +45,9 @@ class Car implements MotorVehicle, Flyable, Swimable {
 }
 
 const car1 = new Car('Toyota');
-```
 
+export {}
+```
 
 
 
